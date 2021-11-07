@@ -35,7 +35,7 @@ app.put('/edit/task/:id',async(req,res)=>{
                 horasr:req.body.horasr,
                 horasp:req.body.horasp,
                 estados:req.body.estados,
-                actividadesnp:req.body.actividadesnp
+                actividadnp:req.body.actividadnp
             },
             { 
                 where: 
