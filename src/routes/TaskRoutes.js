@@ -1,8 +1,14 @@
 const express = require("express");
 const app = express();
-const { Task,Params } = require("../bd/Sequealize");
+const { Task } = require("../bd/Sequealize");
 app.get('/task/all/:id',(req,res)=>{
     Task.findAll({where:{id_usuario:req.params.id}}).then((task) => {
+        res.status(200).json({ task });
+    });
+});
+
+app.get('/tasks/all',(req,res)=>{
+    Task.findAll().then((task) => {
         res.status(200).json({ task });
     });
 });
